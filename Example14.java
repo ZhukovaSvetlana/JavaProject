@@ -5,7 +5,7 @@ public class Example14 {
     public static void main(String[] args) {
         System.out.println("Загадана буква");
         Random r = new Random();
-        int l=r.nextInt(25);
+        int l=r.nextInt(26);
         char letter= (char)(l+97);
         Scanner s = new Scanner(System.in);
 
