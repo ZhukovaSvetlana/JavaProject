@@ -31,13 +31,31 @@ public class Office {
         list.add(employee);
     }
 
-    public void sortEmployee(Employee employee){//сортировка
-        for (Employee element: this.list){
+    /*public void sortEmployee(Employee employee){//сортировка
+        for(int i = list.size()-1 ; i > 0 ; i--){
+            for(int j = 0 ; j < i ; j++){
+                if( list.get(j).getLastName().compareTo(list.get(j+1).getLastName()) > 0){
+                String tmp = list.get(j).getLastName();
+                list.get(j).getLastName() = list.get(j+1).getLastName();
+                list.get(j+1).getLastName() = tmp;
+            }
+        }
+    }*/
 
+    public void sort() {//сортировка
+        List<Integer>list = new ArrayList<>();
+        for(int i = list.size()-1 ; i > 0 ; i--) {
+            for (int j = 0; j < i; j++) {
+                if (list.get(j).getLastName().compareTo(list.get(j + 1).getLastName()) > 0) {
+                    String tmp = list.get(j).getLastName();
+                    list.get(j).getLastName() = list.get(j + 1).getLastName();
+                    list.get(j + 1).getLastName() = tmp;
+                }
+            }
+        }
+        for(Employee employee: this.list){
 
         }
-
-
     }
 
     public ArrayList<Employee> getList(){

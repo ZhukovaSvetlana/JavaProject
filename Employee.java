@@ -1,4 +1,4 @@
-public class Employee {
+public class Employee extends Object implements Comparable{
     private String lastName;
     private String firstName;
     private Rank rank;
@@ -11,7 +11,12 @@ public class Employee {
         this.rank = rank;
     }
 
+    public int getSalary() {
+        return salary;
+    }
+
     public Rank getRank(){
+
         return rank;
     }
 
@@ -34,4 +39,18 @@ public class Employee {
         return lastName + " " + firstName + " " +salary + " " + rank;
     }
 
+
+    @Override
+    public int compareTo(Object o) {
+        if (o instanceof Employee){
+            Employee second = (Employee)o;
+            if (this.lastName.compareTo(second.getLastName()) == 0){
+                return this.salary - second.getSalary();
+            }
+            else{
+                return this.lastName.compareTo(second.getLastName());
+            }
+        }
+        return 1;
+    }
 }
