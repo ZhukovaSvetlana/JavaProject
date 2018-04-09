@@ -16,23 +16,20 @@ public class Employee extends Object implements Comparable{
     }
 
     public Rank getRank(){
-
         return rank;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getLastName() {
         return lastName;
+
     }
 
     public String getFirstName() {
         return firstName;
-    }
-
-    public void fill(String s1, String s2, int salary, Rank rank){
-        this.lastName = s1;
-        this.firstName = s2;
-        this.salary = salary;
-        this.rank = rank;
     }
 
     public String toString(){

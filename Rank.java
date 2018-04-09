@@ -1,7 +1,8 @@
 public enum Rank {
     ENGINEER("Инженер"),
     TESTER("Тестировщик"),
-    DIRECTOR("Директор");
+    DIRECTOR("Директор"),
+    PROGRAMMER("Программист");
 
     Rank(String name){
         this.name = name;

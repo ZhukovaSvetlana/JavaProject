@@ -22,7 +22,8 @@ public class Office {
         }*/
         for (Employee element: this.list){
             System.out.print(element.getLastName()+" ");
-            System.out.println(element.getFirstName()+" ");//одинаковые циклы (были использованы геттеры)
+            System.out.print(element.getFirstName()+" ");//одинаковые циклы (были использованы геттеры)
+            System.out.print(element.getSalary()+" ");
             System.out.println(element.getRank()+" ");
         }
     }
@@ -31,31 +32,20 @@ public class Office {
         list.add(employee);
     }
 
-    /*public void sortEmployee(Employee employee){//сортировка
-        for(int i = list.size()-1 ; i > 0 ; i--){
-            for(int j = 0 ; j < i ; j++){
-                if( list.get(j).getLastName().compareTo(list.get(j+1).getLastName()) > 0){
-                String tmp = list.get(j).getLastName();
-                list.get(j).getLastName() = list.get(j+1).getLastName();
-                list.get(j+1).getLastName() = tmp;
-            }
-        }
-    }*/
 
     public void sort() {//сортировка
-        List<Integer>list = new ArrayList<>();
+       // List<Employee>list = new ArrayList<>();
+
         for(int i = list.size()-1 ; i > 0 ; i--) {
             for (int j = 0; j < i; j++) {
-                if (list.get(j).getLastName().compareTo(list.get(j + 1).getLastName()) > 0) {
-                    String tmp = list.get(j).getLastName();
-                    list.get(j).getLastName() = list.get(j + 1).getLastName();
-                    list.get(j + 1).getLastName() = tmp;
+                if (list.get(j).compareTo(list.get(j + 1)) > 0) {
+                    Employee buf = list.get(j);
+                    list.set(j, list.get(j+1));
+                    list.set(j+1, buf);
                 }
             }
         }
-        for(Employee employee: this.list){
 
-        }
     }
 
     public ArrayList<Employee> getList(){

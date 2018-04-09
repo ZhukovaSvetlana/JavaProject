@@ -11,19 +11,33 @@ public class Main {
         int n = in.nextInt();
 
         for (int i=0; i < n ; i++){
-            Employee employee = new Employee(in.next(), in.next(), in.nextInt(), Rank.valueOf(in.next()));
+            System.out.println("Введите фамилию, имя, зарплату и должность сотрудника");
+            Employee employee = new Employee(in.next(), in.next(), in.nextInt(), Rank.getRank(in.next()));
             office.add(employee);
         }
     }
     public static void main(String[] args) {
-        System.out.println("Введите команду");
-        String command = in.next();
-        if (command.equals("fill")){            // заполнение
-            fill();
+        while (true) {
+            System.out.println("Введите команду");
+            String command = in.next();
+
+            if (command.equals("fill")) {            // заполнение
+                fill();
+            }
+            if (command.equals("outInfo")) {
+                outInfo();
+            }
+            if (command.equals("sort")) {
+                SortEmployee();
+            }
+            if (command.equals("find")) {
+                find();
+            }
         }
-        if (command.equals("outInfo")){
-            outInfo();
-        }
+    }
+
+    public static void SortEmployee(){
+        office.sort();
     }
 
     public static void outInfo(){   // вывод на экран
@@ -66,29 +80,7 @@ public class Main {
 
 
 
-        /*while (true){
-            System.out.println("Введите номер операции");
-            System.out.println("1: заполнить контейнер данными с клавиатуры");
-            System.out.println("2: вывод информации о сотрудниках на экран");
-            System.out.println("3: поиск сотрудников, состоящих на заданной должности");
-            System.out.println("4: сортировка по фамилии и по зарплате");
-            Scanner scanner = new Scanner(System.in);
-            int x = scanner.nextInt();
-            switch (x){
-                case 1:
 
-                    break;
-                case 2:
-
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-            }
-        }*/
 
 
 }
